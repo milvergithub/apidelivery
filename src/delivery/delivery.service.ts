@@ -45,6 +45,7 @@ export class DeliveryService {
       requestTookan.layout_type = "0";
       requestTookan.tracking_link = query.tracking_link;
       requestTookan.timezone = "240";
+      requestTookan.tags = "IVI";
       requestTookan.geofence = query.geofence;
       await this.deliveryTookan(requestTookan).then(value => {
           response = value.data;

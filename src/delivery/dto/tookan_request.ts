@@ -17,5 +17,6 @@ export class TookanRequest {
     tracking_link: number;
     timezone: string;
     custom_field_template: string;
-    geofence: number
+    geofence: number;
+    tags: string;
 }
