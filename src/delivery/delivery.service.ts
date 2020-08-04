@@ -23,7 +23,7 @@ export class DeliveryService {
     }
     if (order.status == OrderStatus.COMPLETED && !localShipping) {
       const date = new Date();
-      date.setMinutes(date.getMinutes() + query.complete_before);
+      date.setMinutes((date.getMinutes() - (240 - Number(query.complete_before))));
       const deliveryTime = date.toISOString();
       const requestTookan = new TookanRequest();
       requestTookan.api_key = query.key;
