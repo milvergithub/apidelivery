@@ -4,7 +4,7 @@ import { TookanRequest } from './delivery/dto/tookan_request';
 import { ApiTags, ApiOperation } from '@nestjs/swagger';
 
 @ApiTags('app')
-@Controller()
+@Controller('app')
 export class AppController {
   constructor(private readonly appService: AppService) {}
 

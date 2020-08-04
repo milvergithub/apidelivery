@@ -36,6 +36,8 @@ export class DeliveryService {
       requestTookan.latitude = order.billing.address_2;
       requestTookan.longitude = order.billing.company;
       requestTookan.job_delivery_datetime = deliveryTime;
+      console.log(requestTookan.job_delivery_datetime);
+      
       requestTookan.team_id = query.team;
       requestTookan.auto_assignment = query.auto_assign;
       requestTookan.has_pickup = "0";
