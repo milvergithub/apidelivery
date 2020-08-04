@@ -7,4 +7,5 @@ export class DeliveryParam {
   auto_assign: string;
   template: string;
   geofence: number;
+  tags: string;
 }

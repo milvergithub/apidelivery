@@ -36,8 +36,12 @@ export class DeliveryService {
       requestTookan.latitude = order.billing.address_2;
       requestTookan.longitude = order.billing.company;
       requestTookan.job_delivery_datetime = deliveryTime;
-      console.log(requestTookan.job_delivery_datetime);
-      
+      if (query.tags) {
+        requestTookan.tags = query.tags;
+      }
+      if (query.template) {
+        requestTookan.custom_field_template = query.template;
+      }
       requestTookan.team_id = query.team;
       requestTookan.auto_assignment = query.auto_assign;
       requestTookan.has_pickup = "0";
@@ -45,7 +49,6 @@ export class DeliveryService {
       requestTookan.layout_type = "0";
       requestTookan.tracking_link = query.tracking_link;
       requestTookan.timezone = "240";
-      requestTookan.tags = "IVI";
       requestTookan.geofence = query.geofence;
       await this.deliveryTookan(requestTookan).then(value => {
           response = value.data;
